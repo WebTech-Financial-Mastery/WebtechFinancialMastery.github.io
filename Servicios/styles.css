@@ -1,0 +1,283 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.4) url("/imagenes/office-730681_1920.jpg") no-repeat center center fixed;
+    background-blend-mode: overlay;
+    background-size: cover;
+    color: #333;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.contenido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.presentacion {
+    margin-top: 80px; /* Ajusta este valor según la altura de tu barra de navegación */
+    padding: 20px;
+    text-align: center;
+}
+
+.texto-redondeado {
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    color: white;
+}
+
+#logo img {
+    max-width: 50px;
+}
+
+.menu-btn {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001; /* Asegúrate de que esté por encima de la navegación */
+}
+
+.menu-btn i {
+    color: #fff;
+}
+
+.nav-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 60px); /* Ajusta el ancho para que el botón no afecte el layout */
+    position: relative;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    transition: transform 0.3s ease; /* Añadido para transiciones suaves */
+}
+
+.nav-menu li {
+    margin: 0 10px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #0aeeee;
+}
+
+.redes {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.redes a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-left: 15px;
+}
+
+.redes a:hover {
+    color: aqua;
+}
+
+/* Contenedor para las tarjetas */
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px; /* Espacio entre las tarjetas */
+    padding: 20px;
+}
+
+/* Estilo de las tarjetas */
+.service-section {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco ligeramente transparente */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    overflow: hidden;
+    position: relative; /* Posicionamiento relativo para manejar la sombra azul */
+    width: 300px; /* Ajusta la anchura de las tarjetas */
+    padding: 15px;
+    transition: transform 0.3s ease; /* Transición suave para la transformación */
+}
+
+/* Efecto de flotación al pasar el mouse */
+.service-section:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el mouse */
+}
+
+/* Sombra azul debajo de la tarjeta al pasar el mouse */
+.service-section::before {
+    content: '';
+    position: absolute;
+    bottom: -10px; /* Desplaza la sombra azul hacia abajo */
+    left: 15px; /* Ajusta el inicio de la sombra desde la izquierda */
+    width: calc(100% - 30px); /* La sombra ocupa casi todo el ancho de la tarjeta */
+    height: 10px; /* Altura de la sombra */
+    background-color: #0056b3; /* Color azul */
+    border-radius: 0 0 15px 15px; /* Bordes redondeados solo en la parte inferior */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+}
+
+/* Mostrar la sombra azul al pasar el mouse */
+.service-section:hover::before {
+    opacity: 1;
+}
+
+
+/* Asegura que el texto no sea transparente */
+.service-section h3, .service-section h4, .service-section ul {
+    color: #333;
+}
+
+/* Ajuste de imágenes dentro de las tarjetas */
+.service-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 15px;
+}
+
+/* Ajuste del texto dentro de las tarjetas */
+.service-section p {
+    font-size: 1rem;
+    color: #333;
+    text-align: justify;
+}
+
+.service-section a{
+    display: inline-block;
+    margin: 0 10px 10px;
+    padding: 10px 15px;
+    background-color: #f0a500;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.service-section a:hover{
+    background-color: rgb(73, 0, 243);
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-main {
+        width: 100%;
+        position: fixed;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Ajusta según el tamaño del header */
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .nav-menu li a {
+        padding: 10px;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .redes {
+        display: none; /* Oculta los iconos en pantallas pequeñas */
+    }
+
+    .plantilla, .logro {
+        width: calc(100% - 20px);
+    }
+
+    /* Ajuste para las tarjetas */
+    .service-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Versión 1: Tarjetas al 50% de ancho*/
+    .service-section {
+        width: 50%;
+        margin-bottom: 20px; /* Espacio entre las tarjetas*/
+    }
+    
+
+    /* Versión 2: Tarjetas al 70% de ancho */
+    /*
+    .service-section {
+        width: 70%;
+        margin-bottom: 20px; 
+    }*/
+}
+
+@media screen and (min-width: 769px) {
+    .nav-main {
+        justify-content: center;
+    }
+
+    .nav-menu {
+        display: flex;
+    }
+
+    .redes {
+        display: flex;
+    }
+
+    /* Ajuste para pantallas grandes */
+    .service-container {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .service-section {
+        width: 300px;
+    }
+}

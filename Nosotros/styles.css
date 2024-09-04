@@ -1,0 +1,264 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.5) url("/imagenes/gif-astro.gif") no-repeat center center fixed;
+    background-blend-mode: overlay;
+    background-size: cover;
+    color: #333;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.contenido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.presentacion {
+    margin-top: 80px; /* Ajusta este valor según la altura de tu barra de navegación */
+    padding: 20px;
+    text-align: center;
+}
+
+.texto-redondeado {
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+#logo img {
+    max-width: 50px;
+}
+
+.menu-btn {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001; /* Asegúrate de que esté por encima de la navegación */
+}
+
+.menu-btn i {
+    color: #fff;
+}
+
+.nav-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 60px); /* Ajusta el ancho para que el botón no afecte el layout */
+    position: relative;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    transition: transform 0.3s ease; /* Añadido para transiciones suaves */
+}
+
+.nav-menu li {
+    margin: 0 10px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #0aeeee;
+}
+
+.redes {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.redes a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-left: 15px;
+}
+
+.redes a:hover {
+    color: aqua;
+}
+
+.presentacion h1 {
+    margin: 0 0 20px 50px;
+    color: rgb(255, 255, 255);
+}
+
+/* Estilo de las secciones como tarjetas */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+section {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    width: 300px;
+    padding: 15px;
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: scale(1.05);
+}
+
+section img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px 15px 0 0;
+    margin-bottom: 15px;
+}
+
+section p {
+    font-size: 1rem;
+    color: #333;
+    text-align: justify;
+}
+
+/* Posicionamiento desordenado */
+#seccion1 {
+    transform: rotate(-3deg);
+}
+
+#seccion2 {
+    transform: rotate(2deg);
+}
+
+#seccion3 {
+    transform: rotate(-1.5deg);
+}
+
+#seccion4 {
+    transform: rotate(1deg);
+}
+
+#seccion5 {
+    transform: rotate(-2deg);
+}
+
+#seccion6 {
+    transform: rotate(3deg);
+}
+
+#seccion7 {
+    transform: rotate(-1deg);
+}
+
+footer{
+    text-align: center;
+    color: white;
+}
+
+/* Estilo responsivo para las secciones */
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        width: 90%;
+        transform: none;
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-main {
+        width: 100%;
+        position: relative;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Ajusta según el tamaño del header */
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 10px;
+        background-color: #f0a500;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .redes {
+        display: none; /* Oculta los iconos en pantallas pequeñas */
+    }
+
+    .plantilla, .logro {
+        width: calc(100% - 20px);
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .nav-main {
+        justify-content: center;
+    }
+
+    .nav-menu {
+        display: flex;
+    }
+
+    .redes {
+        display: flex;
+    }
+}

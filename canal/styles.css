@@ -1,0 +1,228 @@
+/* Estilos generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.4) url("/imagenes/Pantalla\ grande.png") no-repeat center center fixed;
+    background-blend-mode: overlay;
+    background-size: cover;
+    color: #333;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.contenido-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+#logo img {
+    max-width: 50px;
+}
+
+.menu-btn {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001; /* Asegúrate de que esté por encima de la navegación */
+}
+
+.menu-btn i {
+    color: #fff;
+}
+
+.nav-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 60px); /* Ajusta el ancho para que el botón no afecte el layout */
+    position: relative;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    transition: transform 0.3s ease; /* Añadido para transiciones suaves */
+}
+
+.nav-menu li {
+    margin: 0 10px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.nav-menu li a:hover {
+    color: #0aeeee;
+}
+
+.redes {
+    position: absolute;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.redes a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-left: 15px;
+}
+
+.redes a:hover {
+    color: aqua;
+}
+
+/* Contenedor principal */
+.content-container {
+    max-width: 1200px;
+    margin: 80px;
+    padding: 20px;
+    color: white;
+}
+
+/* Estilos generales de sección */
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h2, h3 {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+h4 {
+    color: rgb(255, 255, 255)dcd;
+    margin-bottom: 15px;
+}
+
+/* Estilos de lista */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Enlaces */
+a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-main {
+        width: 100%;
+        position: relative;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Ajusta según el tamaño del header */
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .nav-menu li a {
+        display: block;
+        padding: 10px;
+        background-color: #f0a500;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .redes {
+        display: none; /* Oculta los iconos en pantallas pequeñas */
+    }
+
+    .content-container {
+        padding: 15px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    ul {
+        padding-left: 15px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .nav-main {
+        justify-content: center;
+    }
+
+    .nav-menu {
+        display: flex;
+    }
+
+    .redes {
+        display: flex;
+    }
+
+    h2, h3 {
+        font-size: 1.5em;
+    }
+
+    h4 {
+        font-size: 1.2em;
+    }
+
+    section {
+        padding: 10px;
+    }
+}
